@@ -1,0 +1,36 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "create"
+        }
+    ],
+    "id": "gods_right_hand:recipe_with_create",
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "LEL",
+        "/D/"
+    ],
+    "key": {
+        "#": {
+            "item": "create:brass_hand"
+        },
+        "L": {
+            "item": "minecraft:leather"
+        },
+        "E": {
+            "item": "minecraft:ender_pearl"
+        },
+        "/": {
+            "item": "create:brass_sheet"
+        },
+        "D": {
+            "item": "minecraft:diamond"
+        }
+    },
+    "result": {
+        "id": "gods_right_hand:gods_right_hand",
+        "count": 1
+    }
+}

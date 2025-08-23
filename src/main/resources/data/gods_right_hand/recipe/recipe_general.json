@@ -1,0 +1,39 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:not",
+            "value":{
+                "type": "neoforge:mod_loaded",
+                "modid": "create"
+            }
+        }
+    ],
+    "id": "gods_right_hand:recipe_general",
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "LEL",
+        "/D/"
+    ],
+    "key": {
+        "#": {
+            "tag": "minecraft:wool"
+        },
+        "L": {
+            "item": "minecraft:leather"
+        },
+        "E": {
+            "item": "minecraft:ender_pearl"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        },
+        "D": {
+            "item": "minecraft:diamond"
+        }
+    },
+    "result": {
+        "id": "gods_right_hand:gods_right_hand",
+        "count": 1
+    }
+}

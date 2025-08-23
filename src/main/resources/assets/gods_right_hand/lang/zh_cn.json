@@ -1,0 +1,13 @@
+{
+    "item.gods_right_hand.gods_right_hand": "神之右手",
+    "key.gods_right_hand.open_tool_gui": "使用神之右手",
+    "key.category.gods_right_hand.general": "神之右手",
+    "key.gods_right_hand.open_configuration": "打开配置",
+
+    "gods_right_hand.configuration.showMouse":"是否显示鼠标",
+    "gods_right_hand.configuration.sensitivity":"灵敏度(不显示鼠标时生效)",
+    "gods_right_hand.configuration.capturePickItemBehaviour":"是否捕获选择物品行为",
+    "gods_right_hand.configuration.keepRightHand":"是否在光标离开时保留右手物品",
+
+    "gods_right_hand.press_to_open_config": "按下%s打开配置"
+}

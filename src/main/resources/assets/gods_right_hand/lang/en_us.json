@@ -1,0 +1,13 @@
+{
+    "item.gods_right_hand.gods_right_hand": "God's Right Hand",
+    "key.gods_right_hand.open_tool_gui": "Open Tool GUI",
+    "key.category.gods_right_hand.general": "God's Right Hand",
+    "key.gods_right_hand.open_configuration": "Open Configuration",
+
+    "gods_right_hand.configuration.showMouse":"Show Mouse",
+    "gods_right_hand.configuration.sensitivity":"Sensitivity(valid if show mouse is disabled)",
+    "gods_right_hand.configuration.capturePickItemBehaviour":"Capture Pick Item Behaviour",
+    "gods_right_hand.configuration.keepRightHand":"Keep Right Hand",
+    
+    "gods_right_hand.press_to_open_config": "Press %s to open configuration"
+}
