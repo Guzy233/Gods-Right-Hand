@@ -9,5 +9,6 @@
     "gods_right_hand.configuration.capturePickItemBehaviour":"是否捕获选择物品行为",
     "gods_right_hand.configuration.keepRightHand":"是否在光标离开时保留右手物品",
 
-    "gods_right_hand.press_to_open_config": "按下%s打开配置"
+    "gods_right_hand.press_to_open_config": "按下%s打开配置",
+    "gods_right_hand.configuration.hideKeyTip":"不再显示配置键提示"
 }

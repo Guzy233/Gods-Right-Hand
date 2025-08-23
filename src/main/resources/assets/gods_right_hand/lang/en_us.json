@@ -9,5 +9,7 @@
     "gods_right_hand.configuration.capturePickItemBehaviour":"Capture Pick Item Behaviour",
     "gods_right_hand.configuration.keepRightHand":"Keep Right Hand",
     
-    "gods_right_hand.press_to_open_config": "Press %s to open configuration"
+    "gods_right_hand.press_to_open_config": "Press %s to open configuration",
+
+    "gods_right_hand.configuration.hideKeyTip":"Do not show key tip for configuration"
 }

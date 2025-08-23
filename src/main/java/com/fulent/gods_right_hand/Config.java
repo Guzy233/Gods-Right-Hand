@@ -21,14 +21,17 @@ public class Config {
     public static final ModConfigSpec.BooleanValue SHOW_MOUSE = BUILDER
             .define("showMouse", true);
 
-    public static final ModConfigSpec.DoubleValue SENSITIVITY = BUILDER
-            .defineInRange("sensitivity", 1.5, 0.1, 10.0);
-
     public static final ModConfigSpec.BooleanValue DO_CAPTURE_PICK_ITEM_BEHAVIOUR = BUILDER
             .define("capturePickItemBehaviour", true);
 
     public static final ModConfigSpec.BooleanValue KEEP_RIGHT_HAND = BUILDER
             .define("keepRightHand", true);
+
+    public static final ModConfigSpec.BooleanValue DO_HIDE_KEY_TIP = BUILDER
+            .define("hideKeyTip", false);
+
+    public static final ModConfigSpec.DoubleValue SENSITIVITY = BUILDER
+            .defineInRange("sensitivity", 1.5, 0.1, 10.0);
 
     static final ModConfigSpec SPEC = BUILDER.build();
 

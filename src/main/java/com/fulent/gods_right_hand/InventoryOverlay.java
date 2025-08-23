@@ -153,7 +153,8 @@ public class InventoryOverlay extends Screen {
                 0, 0, 24, 24, 24, 24);
         RenderSystem.disableBlend();
 
-        graphics.drawString(font, indicator, 10, 10, 0xFFFF00);
+        if(!Config.DO_HIDE_KEY_TIP.get())
+            graphics.drawString(font, indicator, 10, 10, 0xFFFF00);
 
         var initX = xMin + 3;
         var initY = yMin + 3;
