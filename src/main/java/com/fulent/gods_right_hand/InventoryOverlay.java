@@ -7,14 +7,11 @@ import com.mojang.blaze3d.systems.RenderSystem;
 
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
-
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.minecraft.client.Minecraft;
-
-// import net.minecraft.con;
 
 public class InventoryOverlay extends Screen {
 
@@ -134,8 +131,7 @@ public class InventoryOverlay extends Screen {
             return false;
         }
 
-        if(keyCode==GLFW.GLFW_KEY_ESCAPE)
-        {
+        if (keyCode == GLFW.GLFW_KEY_ESCAPE) {
             onClose();
             return false;
         }
@@ -153,8 +149,8 @@ public class InventoryOverlay extends Screen {
                 0, 0, 24, 24, 24, 24);
         RenderSystem.disableBlend();
 
-        if(!Config.DO_HIDE_KEY_TIP.get())
-            graphics.drawString(font, indicator, 10, 10, 0xFFFF00);
+        if (!Config.DO_HIDE_KEY_TIP.get())
+            graphics.drawCenteredString(font, Component.literal(indicator), width / 2, height / 2 + 60, 0xFFFF00);
 
         var initX = xMin + 3;
         var initY = yMin + 3;

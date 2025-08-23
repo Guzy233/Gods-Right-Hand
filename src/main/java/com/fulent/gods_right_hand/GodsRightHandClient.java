@@ -1,6 +1,7 @@
 package com.fulent.gods_right_hand;
 
 import org.lwjgl.glfw.GLFW;
+
 import com.mojang.blaze3d.platform.InputConstants;
 
 import net.minecraft.client.KeyMapping;
@@ -14,17 +15,17 @@ import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.ClientTickEvent.Post;
 import net.neoforged.neoforge.client.event.InputEvent;
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import net.neoforged.neoforge.client.event.RenderGuiEvent;
-import net.neoforged.neoforge.client.event.ClientTickEvent.Post;
-
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import top.theillusivec4.curios.api.CuriosApi;
 
 @Mod(value = GodsRightHand.MODID, dist = Dist.CLIENT)
 @EventBusSubscriber(modid = GodsRightHand.MODID, value = Dist.CLIENT)
+@SuppressWarnings("null")
 public class GodsRightHandClient {
     public static final String CATEGORY = "key.category.gods_right_hand.general";
 
@@ -58,6 +59,7 @@ public class GodsRightHandClient {
     }
 
     @SubscribeEvent
+    @SuppressWarnings("unused")
     static void onClientSetup(FMLClientSetupEvent event) {
         minecraft = Minecraft.getInstance();
         isCuriosInstalled = ModList.get().isLoaded("curios");
