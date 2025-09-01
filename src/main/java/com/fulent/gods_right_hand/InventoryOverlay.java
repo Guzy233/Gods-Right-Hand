@@ -128,14 +128,14 @@ public class InventoryOverlay extends Screen {
 
             Minecraft.getInstance().setScreen(null);
             Minecraft.getInstance().setScreen(new ConfigurationScreen(container, null));
-            return false;
+            return true;
         }
 
         if (keyCode == GLFW.GLFW_KEY_ESCAPE) {
             onClose();
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     // 绘制叠加层

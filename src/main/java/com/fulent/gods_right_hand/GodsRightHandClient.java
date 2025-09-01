@@ -25,17 +25,14 @@ import top.theillusivec4.curios.api.CuriosApi;
 
 @Mod(value = GodsRightHand.MODID, dist = Dist.CLIENT)
 @EventBusSubscriber(modid = GodsRightHand.MODID, value = Dist.CLIENT)
-@SuppressWarnings("null")
 public class GodsRightHandClient {
     public static final String CATEGORY = "key.category.gods_right_hand.general";
 
     public static InventoryOverlay overlay;
 
-    public static boolean shouldActived = false;
+    public static boolean shouldActive = false;
 
     public static Minecraft minecraft;
-
-    public static int extraSelectedIndex = 0;
 
     public static int restoredIndex = -1;
 
@@ -59,7 +56,6 @@ public class GodsRightHandClient {
     }
 
     @SubscribeEvent
-    @SuppressWarnings("unused")
     static void onClientSetup(FMLClientSetupEvent event) {
         minecraft = Minecraft.getInstance();
         isCuriosInstalled = ModList.get().isLoaded("curios");
@@ -67,7 +63,7 @@ public class GodsRightHandClient {
 
     @SubscribeEvent
     public static void onScreenRender(RenderGuiEvent.Post event) {
-        if (!shouldActived && minecraft.player.getInventory().getSelected().isEmpty()) {
+        if (!shouldActive && minecraft.player.getInventory().getSelected().isEmpty()) {
             if (minecraft.player.getInventory().selected > 8)
                 restoredIndex = -1;
             while (minecraft.player.getInventory().selected > 8) {
@@ -129,7 +125,7 @@ public class GodsRightHandClient {
     public static void onKeyEvent(InputEvent.Key event) {
         if (event.getKey() != OPEN_TOOL_GUI.getKey().getValue())
             return;
-        KeyHandler(event.getAction() == InputConstants.PRESS);
+        KeyHandler(event.getAction());
     }
 
     @SubscribeEvent
@@ -138,23 +134,26 @@ public class GodsRightHandClient {
             return;
         if (event.getButton() != minecraft.options.keyPickItem.getKey().getValue())
             return;
-        KeyHandler(event.getAction() == InputConstants.PRESS);
+        KeyHandler(event.getAction());
     }
 
-    public static void KeyHandler(boolean isPressed) {
-        if (isPressed) {
-            if (!shouldActived && minecraft.screen == null) {
-                shouldActived = true;
-            }
-        } else {
-            if (minecraft.screen == overlay) {
-                overlay.onClose();
-            }
+    public static void KeyHandler(int action){
+        if (!hasGodsRightHand())
+            return;
+
+        var minecraft = Minecraft.getInstance();
+        if (action == InputConstants.PRESS && minecraft.screen == null) {
+            shouldActive = true;
+        }
+
+        if (action == InputConstants.RELEASE && minecraft.screen == overlay) {
+            overlay.onClose();
         }
     }
 
     public static void ActiveOverlay()
     {
+        shouldActive = false;
         overlay = new InventoryOverlay(Minecraft.getInstance().screen,
                 minecraft.player.getInventory().selected);
         minecraft.setScreen(overlay);
@@ -171,10 +170,7 @@ public class GodsRightHandClient {
 
     @SubscribeEvent
     public static void onTick(Post event) {
-        if (shouldActived && minecraft.screen == null) {
-            shouldActived = false;
-            if (!hasGodsRightHand())
-                return;
+        if (shouldActive && minecraft.screen == null) {
             ActiveOverlay();
         }
     }
