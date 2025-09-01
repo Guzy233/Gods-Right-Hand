@@ -4,7 +4,8 @@
     "compatibilityLevel": "JAVA_21",
     "mixins": [
         "HotbarMixin",
-        "GuiMixin"
+        "GuiMixin",
+        "ServerMixin"
     ],
     "injectors": {
         "defaultRequire": 1

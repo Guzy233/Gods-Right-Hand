@@ -30,8 +30,8 @@ abstract public class HotbarMixin implements Container, Nameable {
     }
 
     @Overwrite
-    public static int getSelectionSize() {
-        return 36;
+    public static boolean isHotbarSlot(int index) {
+        return index >= 0 && index < 36;
     }
 
     @Inject(method = "swapPaint", at = @At("HEAD"), cancellable = true)
