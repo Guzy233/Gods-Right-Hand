@@ -25,7 +25,7 @@ public class GodsRightHand {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(GodsRightHand.MODID);
-    public static final DeferredItem<Item> GODS_RIGHT_HAND = ITEMS.register("gods_right_hand", ()->new Item(new Item.Properties()));
+    public static final DeferredItem<Item> GODS_RIGHT_HAND = ITEMS.register("gods_right_hand", ()->new Item(new Item.Properties().stacksTo(1)));
 
     public GodsRightHand(IEventBus modEventBus, ModContainer modContainer) {
         ITEMS.register(modEventBus);
